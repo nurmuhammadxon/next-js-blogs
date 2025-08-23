@@ -11,7 +11,7 @@ import ShareBtn from "../../_components/share-btn";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params,
     blog = await getDetailedBlog(slug);
@@ -25,7 +25,7 @@ export async function generateMetadata({
   };
 }
 
-async function SlugPage({ params }: { params: { slug: string } }) {
+async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params,
     blog = await getDetailedBlog(slug);
 

@@ -7,7 +7,7 @@ import React from "react";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params,
     blog = await getBlogsByCategory(slug);
@@ -17,7 +17,7 @@ export async function generateMetadata({
   };
 }
 
-async function Page({ params }: { params: { slug: string } }) {
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params,
     category = await getBlogsByCategory(slug);
 

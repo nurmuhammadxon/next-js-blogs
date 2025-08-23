@@ -3,7 +3,7 @@ import { getDetailedAuthor } from "@/service/author.service";
 import Image from "next/image";
 import React from "react";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params,
     author = await getDetailedAuthor(id);
 
