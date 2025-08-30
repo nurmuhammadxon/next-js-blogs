@@ -12,7 +12,7 @@ export interface IArchiveBlogs {
 export interface IBlog {
   id: string;
   title: string;
-  slug: string;
+  slug?: string;
   createdAt: string;
   publishedAt: string;
   updatedAt: string;
@@ -36,7 +36,7 @@ export interface IAuthor {
 
 export interface ITagAndCategory {
   name: string;
-  slug: string;
+  slug?: string;
   blogs?: IBlog[];
 }
 
