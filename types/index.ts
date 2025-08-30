@@ -21,7 +21,7 @@ export interface IBlog {
   tag: ITagAndCategory;
   category: ITagAndCategory;
   content: IContent;
-  image: {
+  image?: {
     url: string;
   };
 }
@@ -30,14 +30,14 @@ export interface IAuthor {
   id: string;
   name: string;
   description: string;
-  image: { url: string };
-  blogs: IBlog[];
+  image?: { url: string };
+  blogs?: IBlog[];
 }
 
 export interface ITagAndCategory {
   name: string;
   slug: string;
-  blogs: IBlog[];
+  blogs?: IBlog[];
 }
 
 export interface IContent {
